@@ -46,20 +46,13 @@ def check_indices():
         return {"status": f"❌ Indices API Error: {e}"}
 
 # Exécution des vérifications
-st.subheader("🔍 Résultats des Vérifications")
-st.write("### Binance API")
-st.json(check_binance())
+verification_results = {
+    "Binance API": check_binance(),
+    "CoinGecko API": check_coingecko(),
+    "Yahoo Finance API": check_yahoo(),
+    "Indices Boursiers": check_indices()
+}
 
-st.write("### CoinGecko API")
-st.json(check_coingecko())
-
-st.write("### Yahoo Finance API (NYSE)")
-st.json(check_yahoo())
-
-st.write("### Indices Boursiers")
-st.json(check_indices())
-
-st.write("✅ Fin de la vérification. Consultez les logs ci-dessus.")
-
+# Ajout de l'affichage après la définition des résultats
 st.subheader("🔍 Résultats de la vérification des API")
 st.write(verification_results)
