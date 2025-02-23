@@ -60,3 +60,6 @@ st.write("### Indices Boursiers")
 st.json(check_indices())
 
 st.write("✅ Fin de la vérification. Consultez les logs ci-dessus.")
+
+st.subheader("🔍 Résultats de la vérification des API")
+st.write(verification_results)
