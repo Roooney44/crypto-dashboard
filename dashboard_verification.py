@@ -1,10 +1,14 @@
-import streamlit as st import requests import ccxt import time from datetime import datetime
+import streamlit as st 
+import requests 
+import ccxt 
+import time from datetime 
+import datetime
 
 st.title("📊 Dashboard de Vérification des Données")
 
 Définition des horaires d'ouverture et de fermeture du marché
 
-MARKET_OPEN_HOUR = 9   # 9h00 (UTC) MARKET_CLOSE_HOUR = 21  # 21h00 (UTC)
+MARKET_OPEN_HOUR = 9  # 9h00 (UTC) MARKET_CLOSE_HOUR = 21  # 21h00 (UTC)
 
 Fonction pour vérifier si on est à l'ouverture ou à la fermeture du marché
 
