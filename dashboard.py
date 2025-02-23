@@ -77,4 +77,19 @@ def fetch_from_swiss_market():
         prices = {quote['symbol']: quote['regularMarketPrice'] for quote in data['quoteResponse']['result']}
         return prices
     except Exception as e:
-        st.warning(f"⚠️ Marché suisse inaccessible. Erreur :
+        st.warning(f"⚠️ Marché suisse inaccessible. Erreur : {e}")  # ✅ Correction ici (une seule ligne)
+        return None
+
+# Sélection intelligente de la source de données
+def fetch_live_prices(symbols):
+    for source in DATA_SOURCES:
+        func = globals().get(DATA_SOURCES[source])
+        if func:
+            prices = func(symbols) if source not in ["indices", "swiss_market"] else func()
+            if prices:
+                return prices
+    st.error("❌ Aucune source de données n'est accessible actuellement.")
+    return {}
+
+# Test des prix récupérés
+st.subheader("Marchés Financiers : Crypto, NYSE, Indices Boursiers et Marché Suisse")
