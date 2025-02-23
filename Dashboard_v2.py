@@ -2,7 +2,7 @@ import streamlit as st import requests import ccxt import time from datetime imp
 
 st.title("📊 Dashboard Marchés Financiers et Vérification")
 
-Définition des horaires d'ouverture et de fermeture du marché
+# Définition des horaires d'ouverture et de fermeture du marché
 
 MARKET_OPEN_HOUR = 9  # 9h00 (UTC) MARKET_CLOSE_HOUR = 21  # 21h00 (UTC)
 
