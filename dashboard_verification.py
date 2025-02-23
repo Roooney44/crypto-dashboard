@@ -14,7 +14,7 @@ Cache pour limiter les appels API
 
 CACHE = {}
 
-def get_cached_response(key): if key in CACHE: return CACHE[key] return None
+def get_cached_response(key): return CACHE.get(key)
 
 def set_cached_response(key, data): CACHE[key] = data
 
